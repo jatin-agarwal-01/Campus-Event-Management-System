@@ -207,6 +207,32 @@ loadDarkModePreference();
 
 // ============ Utilities ============
 
+function finishLoading(mainElementId, duration = 1000, callback = null) {
+    const loader = document.getElementById('loaderContainer');
+    const mainContent = document.getElementById(mainElementId);
+
+    if (loader) {
+        loader.style.opacity = '0';
+        loader.style.transition = `opacity 0.5s ease`;
+        loader.style.pointerEvents = 'none';
+    }
+
+    if (mainContent) {
+        mainContent.style.display = 'block';
+        mainContent.style.opacity = '0';
+        mainContent.style.transition = `opacity 0.5s ease`;
+        
+        setTimeout(() => {
+            mainContent.style.opacity = '1';
+        }, 50);
+    }
+
+    setTimeout(() => {
+        if (loader) loader.style.display = 'none';
+        if (callback) callback();
+    }, duration);
+}
+
 function formatDate(dateString) {
     const options = { year: 'numeric', month: 'short', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('en-US', options);
