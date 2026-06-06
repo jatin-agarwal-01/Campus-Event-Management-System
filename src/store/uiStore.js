@@ -44,3 +44,4 @@ export const useUIStore = create(
     }),
     { name: 'cems-ui-v2', partialize: (state) => ({ darkMode: state.darkMode }) }
   )
+)
