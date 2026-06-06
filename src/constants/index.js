@@ -1,0 +1,268 @@
+export const ROLES = {
+  STUDENT: 'student',
+  ORGANIZER: 'organizer',
+  FACULTY: 'faculty',
+  HOD: 'hod',
+  SUPER_ADMIN: 'super_admin',
+}
+
+export const DEPARTMENTS = [
+  'Computer Science & Engineering (CSE)',
+  'CSE – Artificial Intelligence & ML',
+  'CSE – Data Science',
+  'CSE – Cyber Security',
+  'Electronics & Communication (ECE)',
+  'Electrical & Electronics (EEE)',
+  'Electronics & Communication (ELCE)',
+  'Information Technology (IT)',
+  'Mechanical Engineering (ME)',
+  'Advanced Mechatronics (VLSI)',
+  'Master of Computer Applications (MCA)',
+  'Master of Business Administration (MBA)',
+  'B. Pharmacy',
+  'D. Pharmacy',
+]
+
+export const EVENT_CATEGORIES = [
+  { value: 'tech', label: 'Technology', color: 'bg-blue-100 text-blue-700', icon: '💻' },
+  { value: 'cultural', label: 'Cultural', color: 'bg-purple-100 text-purple-700', icon: '🎭' },
+  { value: 'sports', label: 'Sports', color: 'bg-green-100 text-green-700', icon: '⚽' },
+  { value: 'academic', label: 'Academic', color: 'bg-yellow-100 text-yellow-700', icon: '📚' },
+  { value: 'workshop', label: 'Workshop', color: 'bg-orange-100 text-orange-700', icon: '🔧' },
+  { value: 'seminar', label: 'Seminar', color: 'bg-red-100 text-red-700', icon: '🎤' },
+  { value: 'fest', label: 'Fest', color: 'bg-pink-100 text-pink-700', icon: '🎉' },
+  { value: 'club', label: 'Club Activity', color: 'bg-indigo-100 text-indigo-700', icon: '👥' },
+]
+
+export const EVENT_STATUS = {
+  DRAFT: 'draft',
+  PENDING: 'pending_approval',
+  LIVE: 'live',
+  CANCELLED: 'cancelled',
+  PAST: 'past',
+}
+
+export const PERMISSION_TYPES = [
+  { value: 'event_sanction', label: 'Event Sanction Request', authority: 'Faculty Advisor / Department Admin' },
+  { value: 'venue_booking', label: 'Venue Booking Request', authority: 'Admin / Estate Office' },
+  { value: 'budget_approval', label: 'Budget Approval Request', authority: 'Faculty Advisor / HOD' },
+  { value: 'guest_speaker', label: 'Outside Guest / Speaker Invitation', authority: 'HOD / Dean' },
+  { value: 'banner_display', label: 'Banner & Poster Display Permission', authority: 'Admin' },
+  { value: 'late_night', label: 'Late Night / Weekend Event Permission', authority: 'Dean / DSW' },
+  { value: 'sponsorship', label: 'External Sponsorship Approval', authority: 'Faculty Advisor / HOD' },
+  { value: 'media_coverage', label: 'Media Coverage Request', authority: 'Admin / PRO' },
+  { value: 'transport', label: 'Transport & Logistics Request', authority: 'Admin / Estate Office' },
+  { value: 'food_stall', label: 'Food Stall / Canteen Tie-up Permission', authority: 'Admin / Canteen In-charge' },
+]
+
+export const PERMISSION_STATUS = {
+  DRAFT: 'draft',
+  SUBMITTED: 'submitted',
+  UNDER_REVIEW: 'under_review',
+  APPROVED: 'approved',
+  REJECTED: 'rejected',
+  REVISION: 'revision_requested',
+}
+
+export const TICKET_TYPES = [
+  { value: 'free', label: 'Free' },
+  { value: 'early_bird', label: 'Early Bird' },
+  { value: 'general', label: 'General' },
+  { value: 'vip', label: 'VIP' },
+  { value: 'team', label: 'Team' },
+]
+
+export const NOTIFICATION_TYPES = {
+  REGISTRATION_CONFIRMED: 'registration_confirmed',
+  EVENT_REMINDER: 'event_reminder',
+  EVENT_UPDATED: 'event_updated',
+  EVENT_CANCELLED: 'event_cancelled',
+  APPROVAL_RESULT: 'approval_result',
+  NEW_CLUB_EVENT: 'new_club_event',
+  WAITLIST_SLOT: 'waitlist_slot',
+  PERMISSION_UPDATE: 'permission_update',
+}
+
+export const CLUB_ROLES = ['President', 'Vice President', 'Treasurer', 'Event Head', 'Volunteer', 'Member']
+
+export const SPONSOR_STAGES = ['Contacted', 'Interested', 'Proposal Sent', 'Confirmed', 'Paid']
+
+export const ADMIN_LEVELS = {
+  L1: { label: 'Super Admin (Dean/DSW)', scope: 'Full platform' },
+  L2: { label: 'Department Admin (HOD)', scope: 'Own department' },
+  L3: { label: 'Club Moderator', scope: 'Assigned clubs only' },
+}
+
+export const MOCK_EVENTS = [
+  {
+    id: 'evt-001',
+    title: 'KIET TechFest 2026',
+    category: 'tech',
+    description: 'KIET\'s flagship annual technology festival featuring hackathons, competitive coding, AI/ML workshops, robotics demos and keynote talks from industry leaders at Google, Microsoft and startups.',
+    date: '2026-07-15',
+    time: '09:00',
+    endDate: '2026-07-17',
+    venue: 'Main Auditorium & IDEA Lab',
+    organizer: 'KIET Coding Club',
+    organizerId: 'club-001',
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800',
+    status: 'live',
+    capacity: 1000,
+    registered: 734,
+    ticketTypes: [
+      { type: 'free', label: 'General Entry', price: 0, capacity: 800, registered: 600 },
+      { type: 'vip', label: 'VIP (Workshops + Kit)', price: 499, capacity: 200, registered: 134 },
+    ],
+    tags: ['hackathon', 'coding', 'AI', 'robotics', 'KIET'],
+    isOnline: false,
+    isFeatured: true,
+    speakers: [
+      { name: 'Dr. Priya Sharma', role: 'AI Researcher, IIT Delhi', avatar: '' },
+      { name: 'Rahul Mehta', role: 'CTO, Microsoft India', avatar: '' },
+      { name: 'Ananya Kapoor', role: 'Founder, EdTech Startup', avatar: '' },
+    ],
+    agenda: [
+      { time: '09:00', title: 'Inaugural Ceremony', duration: '1 hr' },
+      { time: '10:00', title: '24-hr Hackathon Begins', duration: '24 hrs' },
+      { time: '11:00', title: 'Keynote: AI & Future of Tech', duration: '1 hr' },
+      { time: '14:00', title: 'Robotics Showcase', duration: '2 hrs' },
+      { time: '16:00', title: 'Startup Pitching Round', duration: '2 hrs' },
+    ],
+    faqs: [
+      { q: 'Can I participate solo in the hackathon?', a: 'Yes, teams of 1–4 members are allowed.' },
+      { q: 'Is registration free?', a: 'General entry is free. VIP includes exclusive workshops and a kit.' },
+      { q: 'Will certificates be provided?', a: 'Yes, all participants get e-certificates from KIET.' },
+    ],
+  },
+  {
+    id: 'evt-002',
+    title: 'Umang – KIET Cultural Fest 2026',
+    category: 'cultural',
+    description: 'Umang is KIET\'s grand annual cultural extravaganza — three days of music, classical and western dance, drama, fashion show, stand-up comedy and art installations from 50+ student performers.',
+    date: '2026-08-10',
+    time: '17:00',
+    endDate: '2026-08-12',
+    venue: 'Open Air Theatre',
+    organizer: 'KIET Cultural Committee',
+    organizerId: 'club-002',
+    image: 'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800',
+    status: 'live',
+    capacity: 2000,
+    registered: 1450,
+    ticketTypes: [{ type: 'free', label: 'General Entry', price: 0, capacity: 2000, registered: 1450 }],
+    tags: ['music', 'dance', 'drama', 'culture', 'Umang'],
+    isOnline: false,
+    isFeatured: true,
+  },
+  {
+    id: 'evt-003',
+    title: 'ICICS 2026 – International Conference on Integrated Carbon & Sustainability',
+    category: 'seminar',
+    description: 'KIET hosts its flagship international conference bringing together researchers, academicians and industry professionals to discuss carbon neutrality, green energy and sustainable engineering practices.',
+    date: '2026-09-05',
+    time: '10:00',
+    endDate: '2026-09-06',
+    venue: 'Main Auditorium',
+    organizer: 'KIET Research Cell',
+    organizerId: 'club-003',
+    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b6404?w=800',
+    status: 'live',
+    capacity: 300,
+    registered: 218,
+    ticketTypes: [
+      { type: 'free', label: 'Student Entry', price: 0, capacity: 200, registered: 168 },
+      { type: 'general', label: 'Professional', price: 999, capacity: 100, registered: 50 },
+    ],
+    tags: ['research', 'sustainability', 'carbon', 'international', 'conference'],
+    isOnline: false,
+    isFeatured: true,
+  },
+  {
+    id: 'evt-004',
+    title: 'KIET Inter-College Sports Meet 2026',
+    category: 'sports',
+    description: 'Annual inter-college sports tournament featuring cricket, football, basketball, badminton and athletics. Compete representing KIET against teams from 20+ colleges across Delhi-NCR.',
+    date: '2026-07-25',
+    time: '07:00',
+    endDate: '2026-07-27',
+    venue: 'KIET Sports Ground',
+    organizer: 'KIET Sports Committee',
+    organizerId: 'club-004',
+    image: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=800',
+    status: 'live',
+    capacity: 500,
+    registered: 320,
+    ticketTypes: [
+      { type: 'free', label: 'Spectator', price: 0, capacity: 400, registered: 280 },
+      { type: 'team', label: 'Team Registration', price: 500, capacity: 100, registered: 40 },
+    ],
+    tags: ['cricket', 'football', 'basketball', 'sports', 'inter-college'],
+    isOnline: false,
+    isFeatured: false,
+  },
+  {
+    id: 'evt-005',
+    title: 'E-Cell Startup Pitch Night – TBI KIET',
+    category: 'tech',
+    description: 'Pitch your startup idea to TBI-KIET mentors and invited investors. Top 3 teams win incubation support, seed funding up to ₹2 Lakhs and mentorship from industry veterans.',
+    date: '2026-07-20',
+    time: '17:00',
+    endDate: '2026-07-20',
+    venue: 'TBI-KIET Innovation Hub',
+    organizer: 'KIET Entrepreneurship Cell',
+    organizerId: 'club-005',
+    image: 'https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800',
+    status: 'live',
+    capacity: 150,
+    registered: 87,
+    ticketTypes: [
+      { type: 'free', label: 'Attendee', price: 0, capacity: 100, registered: 70 },
+      { type: 'vip', label: 'Pitcher (Team)', price: 0, capacity: 50, registered: 17 },
+    ],
+    tags: ['startup', 'entrepreneurship', 'TBI', 'pitch', 'funding'],
+    isOnline: false,
+    isFeatured: true,
+  },
+  {
+    id: 'evt-006',
+    title: 'Research Paper Writing Workshop',
+    category: 'workshop',
+    description: 'Hands-on workshop by KIET faculty on writing, structuring and publishing research papers in IEEE/Springer journals. Covers literature review, methodology, citation tools and plagiarism checks.',
+    date: '2026-06-28',
+    time: '10:00',
+    endDate: '2026-06-28',
+    venue: 'Seminar Hall – Block A',
+    organizer: 'KIET Research Cell',
+    organizerId: 'club-003',
+    image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800',
+    status: 'live',
+    capacity: 80,
+    registered: 74,
+    ticketTypes: [{ type: 'free', label: 'General', price: 0, capacity: 80, registered: 74 }],
+    tags: ['research', 'IEEE', 'writing', 'academic', 'Springer'],
+    isOnline: false,
+    isFeatured: false,
+  },
+]
+
+export const MOCK_CLUBS = [
+  { id: 'club-001', name: 'KIET Coding Club', category: 'tech', members: 210, verified: true, description: 'Competitive coding, open-source, AI/ML and software development hub at KIET.' },
+  { id: 'club-002', name: 'Cultural Committee – Umang', category: 'cultural', members: 145, verified: true, description: 'Organizing Umang and all cultural activities — music, dance, drama, art at KIET.' },
+  { id: 'club-003', name: 'KIET Research Cell', category: 'academic', members: 68, verified: true, description: 'Promoting research culture, paper publications and funded projects at KIET.' },
+  { id: 'club-004', name: 'KIET Sports Committee', category: 'sports', members: 280, verified: true, description: 'Cricket, football, basketball, badminton and athletics at KIET.' },
+  { id: 'club-005', name: 'Entrepreneurship Cell (E-Cell)', category: 'tech', members: 95, verified: true, description: 'Fostering startup culture in partnership with TBI-KIET and NSTEDB.' },
+  { id: 'club-006', name: 'KIET Robotics Club', category: 'tech', members: 78, verified: true, description: 'Robotics, automation, drone tech and IoT projects. Affiliated with SAE KIET.' },
+  { id: 'club-007', name: 'Photography & Media Club', category: 'club', members: 55, verified: true, description: 'Campus photography, videography, KIET newsletters and media coverage.' },
+  { id: 'club-008', name: 'NSS – KIET Unit', category: 'academic', members: 120, verified: true, description: 'National Service Scheme unit for community outreach and social welfare activities.' },
+]
+
+export const MOCK_VENUES = [
+  { id: 'v-001', name: 'Main Auditorium', capacity: 1500, facilities: ['Projector', 'Mic', 'AC', 'Stage', 'Sound System', 'Green Room'], available: true },
+  { id: 'v-002', name: 'Open Air Theatre', capacity: 3000, facilities: ['Stage', 'Floodlights', 'PA System', 'Backstage'], available: true },
+  { id: 'v-003', name: 'IDEA Lab – KIET', capacity: 80, facilities: ['Projector', 'Mic', 'AC', 'Maker Space', 'Whiteboard'], available: true },
+  { id: 'v-004', name: 'TBI-KIET Innovation Hub', capacity: 120, facilities: ['Projector', 'AC', 'Conference System', 'VC Setup'], available: false },
+  { id: 'v-005', name: 'Seminar Hall – Block A', capacity: 150, facilities: ['Projector', 'Mic', 'AC', 'Recording System'], available: true },
+  { id: 'v-006', name: 'Seminar Hall – Block B', capacity: 100, facilities: ['Projector', 'AC', 'Whiteboard'], available: true },
+  { id: 'v-007', name: 'KIET Sports Ground', capacity: 8000, facilities: ['Floodlights', 'PA System', 'Scoreboard', 'Pavilion'], available: true },
+  { id: 'v-008', name: 'Conference Room – Admin Block', capacity: 50, facilities: ['TV Screen', 'AC', 'VC Setup'], available: true },
+]
