@@ -45,4 +45,44 @@ export default function Footer() {
                 { to: '/venues', label: 'Venues' },
                 { to: '/leaderboard', label: 'Leaderboard' },
               ].map(link => (
-                <li key={
+                <li key={link.to}><Link to={link.to} className="text-sm text-gray-500 hover:text-blue-600 transition-colors">{link.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Account */}
+          <div>
+            <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-3">Account</h4>
+            <ul className="space-y-2">
+              {[
+                { to: '/login', label: 'Login' },
+                { to: '/register', label: 'Register' },
+                { to: '/dashboard', label: 'Dashboard' },
+                { to: '/my-events', label: 'My Events' },
+                { to: '/profile/me', label: 'My Profile' },
+              ].map(link => (
+                <li key={link.to}><Link to={link.to} className="text-sm text-gray-500 hover:text-blue-600 transition-colors">{link.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold text-sm text-gray-900 dark:text-white mb-3">Contact KIET</h4>
+            <ul className="space-y-2 text-sm text-gray-500">
+              <li>📍 Delhi-NCR, Ghaziabad-Meerut Road,<br className="hidden md:block" /> Ghaziabad – 201206</li>
+              <li>📞 <a href="tel:+918445557599" className="hover:text-blue-600">+91 8445557599</a></li>
+              <li>✉️ <a href="mailto:admissions@kiet.edu" className="hover:text-blue-600">admissions@kiet.edu</a></li>
+              <li>🌐 <a href="https://kiet.edu" target="_blank" rel="noreferrer" className="hover:text-blue-600">kiet.edu</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-100 dark:border-gray-800 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-gray-400">© 2026 KIET Deemed to be University. All rights reserved.</p>
+          <p className="text-xs text-gray-400">KIET Events — Powered by KIET Team ERP</p>
+        </div>
+      </div>
+    </footer>
+  )
+}

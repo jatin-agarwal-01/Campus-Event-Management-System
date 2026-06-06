@@ -108,4 +108,7 @@ export default function Login() {
             Don't have an account? <Link to="/register" className="text-blue-600 font-semibold hover:underline">Sign up</Link>
           </p>
         </motion.div>
-     
+      </div>
+    </div>
+  )
+}

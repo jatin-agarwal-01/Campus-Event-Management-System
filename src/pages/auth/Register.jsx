@@ -74,4 +74,8 @@ export default function Register() {
 
         <p className="text-center text-sm text-gray-500 mt-6">
           Already have an account? <Link to="/login" className="text-blue-600 font-semibold hover:underline">Sign in</Link>
-        
+        </p>
+      </motion.div>
+    </div>
+  )
+}

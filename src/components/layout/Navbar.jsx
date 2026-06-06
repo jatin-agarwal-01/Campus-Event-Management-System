@@ -114,4 +114,15 @@ export default function Navbar() {
               ) : (
                 <div className="flex items-center gap-2">
                   <Link to="/login" className="text-sm font-medium text-gray-700 hover:text-blue-600 px-3 py-2">Login</Link>
-                  <Lin
+                  <Link to="/register" className="btn-primary text-sm px-4 py-2">Sign Up</Link>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </header>
+      <NotifDrawer />
+      <CommandPalette />
+    </>
+  )
+}

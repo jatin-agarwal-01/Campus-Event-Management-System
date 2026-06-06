@@ -148,4 +148,14 @@ export default function Home() {
         {/* CTA banner */}
         {!isAuthenticated && (
           <section className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-10 text-center text-white">
-            <h2 
+            <h2 className="text-3xl font-bold mb-3">KIET student? Join now!</h2>
+            <p className="text-blue-100 mb-6">Join 10,000+ KIET students already discovering TechFest, Umang, sports meets and more.</p>
+            <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50 mx-auto" onClick={() => navigate('/register')}>
+              Register with KIET Email
+            </Button>
+          </section>
+        )}
+      </div>
+    </Layout>
+  )
+}

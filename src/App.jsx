@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate, Link } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import { useUIStore } from './store/uiStore'
 import { useAuthStore } from './store/authStore'
@@ -52,7 +52,7 @@ export default function App() {
   }, [initDarkMode])
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Toaster
         position="top-right"
         toastOptions={{
@@ -105,10 +105,10 @@ export default function App() {
             <div className="text-8xl">🎪</div>
             <h1 className="text-3xl font-bold text-gray-900">Page Not Found</h1>
             <p className="text-gray-500">The page you're looking for doesn't exist.</p>
-            <a href="/" className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm bg-blue-600 text-white hover:bg-blue-700">Go Home</a>
+            <Link to="/" className="btn-primary px-5 py-2.5 rounded-xl font-semibold text-sm bg-blue-600 text-white hover:bg-blue-700">Go Home</Link>
           </div>
         } />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
