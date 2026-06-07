@@ -26,17 +26,17 @@ export default function Leaderboard() {
 
         {/* Top 3 podium */}
         <div className="flex items-end justify-center gap-4 mb-10">
-          {[1, 0, 2].map(i => {
-            const p = LEADERBOARD[i]
+          {[1, 0, 2].map((pos, idx) => {
+            const p = LEADERBOARD[pos]
             const heights = ['h-28', 'h-36', 'h-24']
             const bgColors = ['bg-gray-100', 'bg-yellow-100', 'bg-orange-100']
             return (
-              <motion.div key={p.rank} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
+              <motion.div key={p.rank} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }}
                 className="flex flex-col items-center gap-2">
                 <Avatar name={p.name} size="lg" />
                 <p className="text-sm font-bold text-gray-900 dark:text-white text-center">{p.name.split(' ')[0]}</p>
                 <p className="text-xs text-gray-500">{p.xp} XP</p>
-                <div className={`${heights[i]} ${bgColors[i]} rounded-t-2xl w-20 flex items-end justify-center pb-3 text-3xl`}>
+                <div className={`${heights[idx]} ${bgColors[idx]} rounded-t-2xl w-20 flex items-end justify-center pb-3 text-3xl`}>
                   {p.badge}
                 </div>
               </motion.div>
